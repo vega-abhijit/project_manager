@@ -1,0 +1,4 @@
+include pro_files/schema.sql
+graft pro_files/static
+graft pro_files/templates
+global-exclude *.pyc

@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+
+<!--{% block nav %}
+  {% if g.user %}
+    <li class='nav-item'>
+      <a href="{{ url_for('student.create') }}" class="btn" role="button">New Project</a>
+    </li>
+  {% endif %}
+{% endblock nav %}-->
+
+<!--{% block header %}
+  <h1><strong>{% block title %}Project List{% endblock title%}</strong></h1>
+{% endblock header %}-->
+
+{% block content %}
+  <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Project Table</div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Course Code</th>
+              <th>Semester</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Progress</th>
+              <th>Completed</th>
+              <th>Student Id</th>
+              <th>Teacher Id</th>
+              <th>Created On</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for project in projects %}
+            <tr>
+              <td>{{ project['id'] }}</td>
+              <td>{{ project['course_code'] }}</td>
+              <td>{{ project['semester'] }}</td>
+              <td>{{ project['title'] }}</td>
+              <td>{{ project['description'] }}</td>
+              <td>{{ project['progress'] }}</td>
+              <td>{{ project['completed'] }}</td>
+              <td>{{ project['student_id'] }}</td>
+              <td>{{ project['teacher_id'] }}</td>
+              <td>{{ project['time'] }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+  </div>
+{% endblock %}

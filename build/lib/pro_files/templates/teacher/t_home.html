@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Project List{% endblock title%}</h1>
+{% endblock header %}
+
+{% block content %}
+<table>
+  <tr>
+    <th>Project id</th>
+    <th>Assigned Student</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Course Code</th>
+    <th>Semester</th>
+    <th>Progress (%)</th>
+  </tr>
+  <tr>
+    {% for project in projects %}
+    <td>{{ project['student_id'] }}</td>
+    <td>{{ project['title'] }}</td>
+    <td>{{ project['description'] }}</td>
+    <td>{{ project['course_code'] }}</td>
+    <td>{{ project['semester'] }}</td>
+    <td>{{ project['progress'] }}</td>    
+    {% endfor %}
+  </tr>
+</table> 
+{% endblock %}

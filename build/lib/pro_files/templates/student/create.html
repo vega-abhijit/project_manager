@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Create Project{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <div class='container-fluid' style='margin-top:0px'>
+    <form class='form-inline' method="post">
+      <div class='form-group' style='margin:15px'>
+        <label for="title" class='mr-sm-2'>Title <span>*</span></label>
+        <input name="title" id="title" class='form-control mb-2 mr-sm-2' value='{{ request.form['title'] }}' required>
+      </div>
+      <div class='form-group' style='margin:15px'>
+        <label for="description" class='mr-sm-2'>Description <span>*</span></label>
+        <textarea name="description" id="description" class='form-control mb-2 mr-sm-2' required>{{ request.form['description'] }}</textarea>
+      </div>
+      <div class='form-group' style='margin:15px'>
+        <label for="course_code" class='mr-sm-2'>Course Code <span>*</span></label>
+        <input name="course_code" id="course_code" class='form-control mb-2 mr-sm-2' value='{{ request.form['course_code'] }}' required>
+      </div>
+      <div class='form-group' style='margin:15px'>
+        <label for="semester" class='mr-sm-2'>Semester <span>*</span></label>
+        <input name="semester" id="semester" class='form-control mb-2 mr-sm-2' value='{{ request.form['semester'] }}' required>
+      </div>
+      <div class='form-group' style='margin:15px'>
+        <label for="email" class='mr-sm-2'>Teachers Email <span>*</span></label>
+        <input name="email" id="email" class='form-control mb-2 mr-sm-2' value='{{ request.form['email'] }}' required>
+      </div>
+      <div  style='margin:15px'>
+        <input type="submit" class='btn btn-primary mb-2' value="Create">
+      </div>
+    </form>
+  </div>
+{% endblock %}
